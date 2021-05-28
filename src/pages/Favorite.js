@@ -6,7 +6,8 @@ import { Context } from "../Context";
 import CharacterItem from "../components/characters/CharacterItem";
 
 const Favorite = () => {
-  const { favorited, setButtonClicked } = useContext(Context);
+  const { favorited, setButtonClicked, toggleAllFavorites } =
+    useContext(Context);
 
   return favorited.length > 0 ? (
     <div className="fav-container">
@@ -17,8 +18,17 @@ const Favorite = () => {
         ))}
       </section>
       <Link to="/">
-        <button className="fav-character-on">Go back to Home Page </button>
+        <button
+          className="fav-character-on"
+          onClick={() => setButtonClicked(false)}
+        >
+          Go back to Home Page{" "}
+        </button>
       </Link>
+      <br />
+      <button className="fav-character-on" onClick={() => toggleAllFavorites()}>
+        Remove all{" "}
+      </button>
     </div>
   ) : (
     <div className="empty-favorite">

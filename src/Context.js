@@ -20,6 +20,14 @@ const ContextProvider = ({ children }) => {
     setFavorited(favoritedArr);
   };
 
+  const toggleAllFavorites = () => {
+    const updatedArr = items.map((item) => {
+      return { ...item, isFavorite: false };
+    });
+    setItems(updatedArr);
+    setFavorited([]);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -27,6 +35,7 @@ const ContextProvider = ({ children }) => {
         setItems,
         favorited,
         toggleFavorite,
+        toggleAllFavorites,
         buttonClicked,
         setButtonClicked,
       }}
