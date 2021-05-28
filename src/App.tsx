@@ -9,12 +9,14 @@ import Footer from "./components/ui/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/favorite" component={Favorite} />
-      </Switch>
+      <div className="body-container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/favorite" component={Favorite} />
+        </Switch>
+      </div>
       <Footer />
     </div>
   );

@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../Context";
 //Components
-import Header from "../components/ui/Header";
 import CharacterGrid from "../components/characters/CharacterGrid";
 import Search from "../components/ui/Search";
 //Axios
@@ -14,7 +13,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
 
-  const { items, setItems, toggleAllFavorites } = useContext(Context);
+  const { items, setItems } = useContext(Context);
 
   useEffect(() => {
     const fetchItems = async () => {
