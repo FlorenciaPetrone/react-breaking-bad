@@ -19,7 +19,7 @@ const Favorite = () => {
       </section>
       <Link to="/">
         <button
-          className="fav-character-on"
+          className="fav-character"
           onClick={() => setButtonClicked(false)}
         >
           Go back to Home Page{" "}
